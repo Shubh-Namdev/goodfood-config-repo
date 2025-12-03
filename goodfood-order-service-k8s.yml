@@ -10,5 +10,7 @@ spring:
     producer.value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
   security:
-    auth:
-      jwks: http://auth-server.goodfood.svc.cluster.local:9000/oauth2/jwks
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://auth-server.goodfood.svc.cluster.local:9000/oauth2/jwks
