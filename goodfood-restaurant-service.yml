@@ -17,4 +17,12 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,prometheus
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true   # useful for Kubernetes liveness/readiness
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      service-type: restaurant
