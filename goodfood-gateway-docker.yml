@@ -24,3 +24,6 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: http://auth-server:9000/oauth2/jwks
+
+  zipkin:
+    base-url: http://zipkin:9411
