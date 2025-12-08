@@ -16,5 +16,5 @@ spring:
   kafka:
     bootstrap-servers: kafka.goodfood.svc.cluster.local:9092
   
-  zipkin:
-    base-url: http://zipkin.goodfood.svc.cluster.local:9411
+  # zipkin:
+  #   base-url: http://zipkin.goodfood.svc.cluster.local:9411

@@ -22,10 +22,10 @@ spring:
           uri: http://${AUTH_SERVER_URL}:9000
           predicates:
             - Path=/auth/**,/oauth2/**
-        # - id: order-service
-        #   uri: http://${ORDER_SERVICE_URL}:8082
-        #   predicates:
-        #     - Path=/orders/**
+        - id: order-service
+          uri: http://${ORDER_SERVICE_URL}:8082
+          predicates:
+            - Path=/orders/**
         # - id: restaurant-service
         #   uri: http://${RESTAURANT_SERVICE_URL}:8084
         #   predicates:
