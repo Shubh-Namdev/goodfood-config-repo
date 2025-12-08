@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth-server
+          uri: http://${AUTH_SERVER_IP}:9000
+          predicates:
+            - Path=/auth/**,/oauth2/**
+        - id: order-service
+          uri: http://${ORDER_SERVICE_IP}:8082
+          predicates:
+            - Path=/orders/**
+        - id: restaurant-service
+          uri: http://${RESTAURANT_SERVICE_IP}:8084
+          predicates:
+            - Path=/restaurants/**
+        - id: delivery-service
+          uri: http://${DELIVERY_SERVICE_IP}:8085
+          predicates:
+            - Path=/deliveries/**
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://${AUTH_SERVER_IP}:9000/oauth2/jwks
