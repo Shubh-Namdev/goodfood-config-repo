@@ -30,5 +30,15 @@ spring:
         jwt:
           jwk-set-uri: http://auth-server:9000/oauth2/jwks
 
+
+logging:
+  level:
+    root: INFO
+    reactor: ERROR
+    reactor.netty: ERROR
+    org.springframework.cloud.gateway: WARN
+    org.springframework.web.reactive: WARN
+    org.springframework.security: WARN
+
   # zipkin:
   #   base-url: http://zipkin:9411
